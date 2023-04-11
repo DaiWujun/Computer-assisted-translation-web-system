@@ -6,9 +6,9 @@
 > [代武君](https://github.com/DaiWujun)  
 >
 > ### 项目组成员  
-> 封江浩
+> [封江浩](https://github.com/KleinerHase)
 > [翁强](https://github.com/Tsubaki-01)
-> 孙庆一
+> [孙庆一](https://github.com/sqyde)
 > [王祖鹏](https://github.com/wangzupeng12061)  
 
 ## 项目特性  
