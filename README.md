@@ -3,12 +3,13 @@
 本项目是一个计算机辅助翻译Web系统，基于后台的机器翻译引擎，旨在为专业翻译人员或翻译用户提供高效方便的翻译工具。  
 
 > ### 项目负责人：  
-> 代武君  
+> [代武君](https://github.com/DaiWujun)  
+>
 > ### 项目组成员  
-> 封江浩（GitHub上账号：封江浩）  
-> 翁强（GitHub上账号：Tsubaki）  
-> 孙庆一（GitHub上账号：sqyde）  
-> 王祖鹏（GitHub上账号：par_amour)）  
+> 封江浩
+> [翁强](https://github.com/Tsubaki-01)
+> 孙庆一
+> [王祖鹏](https://github.com/wangzupeng12061)  
 
 ## 项目特性  
 本项目具有以下特性：  
