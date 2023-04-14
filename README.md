@@ -6,17 +6,17 @@
 >
 > ### 项目负责人
 >
-> [代武君](https://github.com/DaiWujun)  
+> [代武君](https://github.com/DaiWujun)  （DaiWujun）
 >
 > ### 项目组成员
 >
-> [封江浩](https://github.com/KleinerHase)
+> [封江浩](https://github.com/KleinerHase)（KleinerHase）
 >
-> [翁强](https://github.com/Tsubaki-01)
+> [翁强](https://github.com/Tsubaki-01)（Tsubaki-01）
 >
-> [孙庆一](https://github.com/sqyde)
+> [孙庆一](https://github.com/sqyde)（sqyde）
 >
-> [王祖鹏](https://github.com/wangzupeng12061)
+> [王祖鹏](https://github.com/wangzupeng12061)（wangzupeng12061）
 
 # 项目特性
 
