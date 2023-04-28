@@ -6,7 +6,7 @@
 
 ### 1.主界面
 
-![主界面](\docs\System prototype\主界面.png)
+![主界面](img/主界面.png)
 
 #### 界面交互分析：
 
