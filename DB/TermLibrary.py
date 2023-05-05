@@ -3,14 +3,14 @@ from mysql.connector import errorcode
 import csv
 
 #  CREATE TABLE terms (
-#     id INT AUTO_INCREMENT PRIMARY KEY,
-#     term VARCHAR(255) NOT NULL,
-#     definition TEXT,
-#     context TEXT,
-#     source VARCHAR(255),
-#     category VARCHAR(255),
-#     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-#     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+#     id INT AUTO_INCREMENT PRIMARY KEY,                                            #   术语的唯一标识符，自动递增；
+#     term VARCHAR(255) NOT NULL,                                                   #   术语本身，必填字段；
+#     definition TEXT,                                                              #   术语的定义，可选字段；
+#     context TEXT,                                                                 #   术语出现的上下文，可选字段；
+#     source VARCHAR(255),                                                          #   术语来源，可选字段；
+#     category VARCHAR(255),                                                        #   术语所属的分类，可选字段；
+#     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,                               #   术语的创建时间，自动生成；
+#     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP    #   术语的更新时间，自动更新。
 # );
 
 # 数据库连接配置
@@ -87,7 +87,7 @@ def delete_term(term_id):
 
 
 # 导出备份
-def export_backup(backup_file):
+def export_backup_term(backup_file):
     with open(backup_file, 'w', newline='', encoding='utf-8') as csvfile:
         writer = csv.writer(csvfile)
     writer.writerow(['id', 'term', 'definition', 'context', 'source', 'category'])
