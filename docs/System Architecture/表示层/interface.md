@@ -36,7 +36,7 @@ addTerminology(term: Terminology): void - 添加术语。
 
 searchTerminology(keyword: string): void - 搜索术语。
 
-翻译界面组件接口
+### 翻译界面组件接口
 
 splitDocument(doc: Document): void - 文档分段。
 
