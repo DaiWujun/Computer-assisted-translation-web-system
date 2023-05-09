@@ -45,6 +45,7 @@ def add_memory(memory, definition='', context='', source='', category=''):
     data = (memory, definition, context, source, category)
     cursor.execute(add_query, data)
     cnx.commit()
+    return True
 
 
 # 根据记忆查询
@@ -75,6 +76,7 @@ def update_memory(memory_id, memory, definition='', context='', source='', categ
     data = (memory, definition, context, source, category, memory_id)
     cursor.execute(update_query, data)
     cnx.commit()
+    return True
 
 
 # 删除一条记忆
@@ -84,6 +86,7 @@ def delete_memory(memory_id):
     data = (memory_id,)
     cursor.execute(delete_query, data)
     cnx.commit()
+    return True
 
 
 # 导出备份
@@ -97,7 +100,9 @@ def export_backup_memory(backup_file):
     for result in results:
         writer.writerow(result)
     print(f"Backup exported to {backup_file}")
+    return True
 
+#  根据条目查找id
 def get_id_by_memory(memory):
     search_query = ("SELECT id FROM memorys "
                     "WHERE memory = %s")
@@ -105,6 +110,6 @@ def get_id_by_memory(memory):
     cursor.execute(search_query, data)
     result = cursor.fetchone()
     if result:
-        return result[0]
+        return result
     else:
         return None

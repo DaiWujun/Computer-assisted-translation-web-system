@@ -45,7 +45,7 @@ def add_term(term, definition='', context='', source='', category=''):
     data = (term, definition, context, source, category)
     cursor.execute(add_query, data)
     cnx.commit()
-
+    return True
 
 # 根据术语查询
 def search_by_term(term):
@@ -75,7 +75,7 @@ def update_term(term_id, term, definition='', context='', source='', category=''
     data = (term, definition, context, source, category, term_id)
     cursor.execute(update_query, data)
     cnx.commit()
-
+    return True
 
 # 删除一条术语
 def delete_term(term_id):
@@ -84,7 +84,7 @@ def delete_term(term_id):
     data = (term_id,)
     cursor.execute(delete_query, data)
     cnx.commit()
-
+    return True
 
 # 导出备份
 def export_backup_term(backup_file):
@@ -97,7 +97,9 @@ def export_backup_term(backup_file):
     for result in results:
         writer.writerow(result)
     print(f"Backup exported to {backup_file}")
+    return True
 
+#  根据条目查找id
 def get_id_by_term(term):
     search_query = ("SELECT id FROM terms "
                     "WHERE term = %s")
@@ -105,6 +107,6 @@ def get_id_by_term(term):
     cursor.execute(search_query, data)
     result = cursor.fetchone()
     if result:
-        return result[0]
+        return result
     else:
         return None
