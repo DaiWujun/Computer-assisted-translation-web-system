@@ -11,6 +11,8 @@ public class LanguageDetection {
         // ...
     }
 
+
+
     public static String detectLanguage(String text) {
         // 实现语言识别逻辑
         String languageCode = "en"; // 假设识别结果为英文
