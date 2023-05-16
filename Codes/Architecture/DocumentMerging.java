@@ -1,4 +1,3 @@
-package src;
 
 public class DocumentMerging {
     public static String mergeDocuments(String[] documents) {
