@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <title>计算机辅助翻译系统</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        height: 830px;
+        width: 1276px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .separator {
+        height: 1px;
+        width: 100%;
+        background-color: #000;
+        position: absolute;
+        top: 126px;
+      }
+      .logo {
+        position: absolute;
+        width: 876px;
+        height: 83px;
+        left: 200px;
+        top: 0px;
+        font-family: 'Alata';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 66px;
+        line-height: 100px;
+        /* or 152% */
+
+        text-align: center;
+        color: #000000;
+
+      }
+      .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background-image: url("path/to/avatar-image.jpg");
+        background-size: cover;
+      }
+      .form-container {
+        position: absolute;
+        top: 127px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .form-item {
+        width: 731px;
+        height: 100px;
+        border-radius: 10px;
+        margin-bottom: 41px;
+        background-color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+      }
+      .form-item label {
+        font-size: 30px;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+      }
+      .form-item input {
+        width: 80%;
+        font-size: 30px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+      }
+      .form-item button {
+        font-size: 30px;
+        width: 20%;
+        height: 100%;
+        border: none;
+        outline: none;
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+      }
+      .form-item button:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="separator"></div>
+      <div class="logo">计算机辅助翻译系统</div>
+      <div class="avatar"></div>
+      <div class="form-container">
+        <div class="form-item">
+          <label for="username">用户名</label>
+          <input type="text" id="username">
+        </div>
+        <div class="form-item">
+          <label for="password">密码</label>
+          <input type="password" id="password">
+        </div>
+        <div class="form-item">
+          <label for="password-confirm">再次输入密码</label>
+          <input type="password" id="password-confirm">
+        </div>
+        <div class="form-item">
+          <button type="submit">注册</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
