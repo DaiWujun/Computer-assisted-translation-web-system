@@ -1,3 +1,4 @@
+/* 默认样式 */
 body {
     margin: 0;
     padding: 0;
@@ -29,7 +30,6 @@ body {
     font-weight: 400;
     font-size: 66px;
     line-height: 100px;
-    /* or 152% */
     text-align: center;
     color: #000000;
   }
@@ -100,5 +100,47 @@ body {
   
   .form-item button:hover {
     opacity: 0.8;
+  }
+  
+  /* 响应式设计 */
+  @media (max-width: 1200px) {
+    .container {
+      width: 100%;
+      height: auto;
+      padding: 20px;
+    }
+    
+    .logo {
+      width: 100%;
+      left: 0;
+      text-align: center;
+      padding: 20px 0;
+    }
+    
+    .avatar {
+      top: auto;
+      bottom: 30px;
+      right: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .form-item {
+      width: 100%;
+      padding: 10px;
+    }
+    
+    .form-item label {
+      font-size: 20px;
+      margin-right: 10px;
+    }
+    
+    .form-item input {
+      font-size: 20px;
+    }
+    
+    .form-item button {
+      font-size: 20px;
+    }
   }
   
