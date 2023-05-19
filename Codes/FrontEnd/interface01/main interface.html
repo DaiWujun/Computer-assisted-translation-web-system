@@ -1,125 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>计算机辅助翻译系统</title>
-	<meta charset="UTF-8">
-	<style>
-		body{
-			margin:0;
-			padding:0;
-		}
-		.container{
-			height:100vh;
-			max-width:1200px;
-			background-color:#f0f0f0;
-			position:relative;
-			margin:auto;
-			padding: 0 20px; /* 添加左右边距 */
-			box-sizing: border-box; /* 让padding不影响元素的宽度 */
-		}
-		.divider{
-			height:2px;
-			width:100%;
-			background-color:#ccc;
-			position:absolute;
-			top:126px;
-		}
-		.title{
-			font-size:4rem; /* 修改字号 */
-			text-align:center;
-			margin-top:40px;
-		}
-		.avatar{
-			height:6vh; /* 修改高度 */
-			width:6vh; /* 修改宽度 */
-			background-color:#ccc;
-			border-radius:50%;
-			position:absolute;
-			top:4vh; /* 修改位置 */
-			right:4vh; /* 修改位置 */
-		}
-		.main{
-			height:44vh; /* 修改高度 */
-			width:85%; /* 修改宽度 */
-			background-color:#fff;
-			position:absolute;
-			top:20vh; /* 修改位置 */
-			left:8%; /* 修改位置 */
-			border-radius:20px;
-			display:flex;
-			flex-direction:column;
-			align-items:center;
-			justify-content:center;
-		}
-		.drag-box{
-			height:30vh; /* 修改高度 */
-			width:60%; /* 修改宽度 */
-			background-color:#ccc;
-			border-radius:20px;
-			display:flex;
-			flex-direction:column;
-			align-items:center;
-			justify-content:center;
-			margin-bottom:5vh; /* 修改间距 */
-		}
-		.drag-text{
-			font-size:2rem; /* 修改字号 */
-			margin-bottom:1vh; /* 修改间距 */
-		}
-		.select-file{
-			height:4.5vh; /* 修改高度 */
-			width:10.5vh; /* 修改宽度 */
-			background-color:#fff;
-			border:1px solid #000;
-			border-radius:5px;
-			display:flex;
-			align-items:center;
-			justify-content:center;
-			font-size:1rem; /* 修改字号 */
-		}
-		.menu{
-			display:flex;
-			flex-wrap:wrap;
-			justify-content:center;
-			margin-bottom: 5vh; /* 修改间距 */
-		}
-		.menu-item{
-			height:9vh; /* 修改高度 */
-			width:22vh; /* 修改宽度 */
-			background-color:#ccc;
-			border-radius:20px;
-			display:flex;
-			align-items:center;
-			justify-content:center;
-			margin:0 2.5vh 2.5vh; /* 修改间距 */
-		}
-		.menu-item-text{
-			font-size:1.5rem; /* 修改字号 */
-		}
-	</style>
+  <title>计算机辅助翻译系统</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="main interface.css">
 </head>
 <body>
-	<div class="container">
-		<div class="divider"></div>
-		<div class="title">计算机辅助翻译系统</div>
-		<div class="avatar"></div>
-		<div class="main">
-			<div class="drag-box">
-				<div class="drag-text">拖拽文件至此处</div>
-				<div class="select-file">选择文件</div>
-			</div>
-			<div class="menu">
-				<div class="menu-item">
-					<div class="menu-item-text">主界面</div>
-				</div>
-				<div class="menu-item">
-					<div class="menu-item-text">翻译记忆库</div>
-				</div>
-				<div class="menu-item">
-					<div class="menu-item-text">术语库</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="container">
+    <div class="divider"></div> <!-- 添加标题栏分割线 -->
+    <div class="title">计算机辅助翻译系统</div> <!-- 添加标题栏 -->
+    <div class="menu-wrapper">
+      <div class="button">
+        <div class="button-text">主界面</div>
+      </div>
+      <div class="button">
+        <div class="button-text">翻译记忆库</div>
+      </div>
+      <div class="button">
+        <div class="button-text">术语库</div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="drag-box">
+        <div class="drag-text">拖拽文件至此处</div>
+        <div class="select-file">
+			<input type="file" id="file-input" style="display: none;">
+			<label for="file-input" class="button-text">选择文件</label>
+		  </div>
+    </div>
+  </div>
 </body>
 </html>
