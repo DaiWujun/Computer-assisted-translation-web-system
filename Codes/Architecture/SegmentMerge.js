@@ -2,7 +2,7 @@
 // POST /merge：将多段文本合并为一个文档。请求体应该是一个 JSON 对象，包含 segments 属性，该属性的值是一个数组，包含要合并的各段文本。服务器将返回一个 JSON 对象，包含 document 属性，该属性的值是合并后的文档。
 const express = require('express');
 const app = express();
-app.use(express.json());
+app.use(express.json());   
 
 app.post('/segment', (req, res) => {
     const { document } = req.body;
