@@ -1,7 +1,7 @@
 # Database
 
 该文件夹存放关于项目数据库相关的代码文件
-
+(该文件夹由翁强负责)
 #### 数据库结构示意：
 
 ![Database](/img/Database.png)
