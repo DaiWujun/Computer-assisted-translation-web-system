@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    height: 100vh;
+    max-width: 1200px;
+    background-color: #f0f0f0;
+    position: relative;
+    margin: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; 
+  }
+  .title {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .menu-wrapper {
+    width: 200px;
+    background-color: #ccc;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .button {
+    height: 40px;
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #ddd;
+  }
+  
+  .button-text {
+    font-size: 1rem;
+  }
+  
+  .main {
+    flex: 1;
+    height: 100%;
+    background-color: #fff;
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .drag-box {
+    height: 30vh;
+    width: 60%;
+    background-color: #ccc;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5vh;
+  }
+  
+  .drag-text {
+    font-size: 2rem;
+    margin-bottom: 1vh;
+  }
+  
+  .select-file {
+    height: 4.5vh;
+    width: 10.5vh;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .select-file label {
+    cursor: pointer;
+  }
+  
+  .select-file input[type="file"] {
+    display: none;
+  }
+  
+  
+  .divider {
+    height: 2px;
+    width: 90%;
+    background-color: #ccc;
+    position: absolute;
+    top: 120px;
+  }
+  
+  /* 媒体查询 */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .menu-wrapper {
+      width: 100%;
+      align-items: center;
+    }
+  
+    .button {
+      width: auto;
+    }
+  
+    .main {
+      margin-top: 20px;
+    }
+  
+    .select-file {
+      display: none;
+    }
+  }
+  
