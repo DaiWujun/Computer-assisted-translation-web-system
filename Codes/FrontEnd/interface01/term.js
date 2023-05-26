@@ -1,13 +1,37 @@
 // 跳转到翻译记忆库页面
-const tmButton = document.querySelectorAll('.nav li')[1].querySelector('a');
+const tmButton = document.querySelector('.navigation li:nth-child(3) a');
 tmButton.addEventListener('click', () => {
-  window.location.href = 'translation memory.html';
+  axios.get('/api/translation-memory')
+    .then((response) => {
+      const { success, message, content } = response.data;
+      if (success) {
+        console.log(content);
+        window.location.href = 'translation memory.html';
+      } else {
+        console.error(message);
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 });
 
-// 跳转到主界面
-const mainButton = document.querySelectorAll('.nav li')[0].querySelector('a');
-mainButton.addEventListener('click', () => {
-  window.location.href = 'main interface.html';
+// 跳转到主界面页面
+const terminologyButton = document.querySelector('.navigation li:nth-child(2) a');
+terminologyButton.addEventListener('click', () => {
+  axios.get('/api/main')
+    .then((response) => {
+      const { success, message, main } = response.data;
+      if (success) {
+        console.log(main);
+        window.location.href = 'main interface.html';
+      } else {
+        console.error(message);
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 });
 
 // 删除术语记录
