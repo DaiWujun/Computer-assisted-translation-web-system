@@ -107,8 +107,6 @@ body {
     position: absolute;
     top: 120px;
   }
-  
-  /* 媒体查询 */
   @media (max-width: 768px) {
     .container {
       flex-direction: column;
