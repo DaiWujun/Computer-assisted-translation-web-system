@@ -1,86 +1,64 @@
-* {
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    background: url('https://i0.pickpik.com/photos/574/398/392/beach-lagoon-sunset-sundown-preview.jpg') no-repeat;
+    background-size: 100% 130%;
 }
 
-.container {
-    background-color: #ffffff;
-    width: 800px;
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+#login_box {
+    width: 20%;
+    height: 400px;
+    background-color: #00000060;
+    margin: auto;
+    margin-top: 10%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 50px 50px;
 }
 
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+h2 {
+    color: #ffffff90;
+    margin-top: 5%;
 }
 
-h1 {
-    font-size: 66px;
-    margin: 0;
+#input-box {
+    margin-top: 5%;
 }
 
-.avatar {
-    width: 92px;
-    height: 92px;
-    border-radius: 50%;
-}
-
-hr {
-    margin: 20px 0;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.input-field {
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    width: 731px;
-    height: 100px;
-    margin-bottom: 20px;
-    padding: 0 20px;
-    border-radius: 5px;
+span {
+    color: #fff;
 }
 
 input {
-    flex: 1;
-    height: 100%;
-    border: none;
+    border: 0;
+    width: 60%;
+    font-size: 15px;
+    color: #fff;
+    background: transparent;
+    border-bottom: 2px solid #fff;
+    padding: 5px 10px;
     outline: none;
-    background-color: transparent;
-    font-size: 20px;
-    padding-left: 10px;
+    margin-top: 10px;
 }
 
 button {
-    background-color: white;
-    width: 731px;
-    height: 100px;
-    border: 2px solid #000;
-    border-radius: 5px;
-    font-size: 24px;
-    cursor: pointer;
-    transition: all 0.3s;
+    margin-top: 50px;
+    width: 60%;
+    height: 30px;
+    border-radius: 10px;
+    border: 0;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+    background-image: linear-gradient(to right, #30cfd0, #330867);
 }
 
-button:hover {
-    background-color: #f0f0f0;
+#sign_up {
+    margin-top: 45%;
+    margin-left: 60%;
+}
+
+a {
+    color: #b94648;
 }
 
 .register {
@@ -90,8 +68,8 @@ button:hover {
 }
 
 .register a {
-    font-size: 30px;
-    color: #000;
+    font-size: 25px;
+    color: #fff;
     text-decoration: none;
 }
 
