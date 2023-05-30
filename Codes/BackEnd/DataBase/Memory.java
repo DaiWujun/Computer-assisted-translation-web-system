@@ -37,12 +37,12 @@ public class Memory
     }
 
     // Getter and Setter methods for memory
-    public String getmemory()
+    public String getMemory()
     {
         return memory;
     }
 
-    public void setmemory(String memory)
+    public void setMemory(String memory)
     {
         this.memory = memory;
     }

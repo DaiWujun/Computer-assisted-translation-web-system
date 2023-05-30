@@ -20,7 +20,7 @@ public class MemoryLibrary
     public List<Memory> searchByMemory(String memory)
     {
         // 调用 MemoryDAO 的 search_by_memory 方法
-        List<Object[]> results = memoryDAO.searchByMemory(memory);
+        List<String[]> results = memoryDAO.searchByMemory(memory);
 
         // 将结果转换为 Memory 对象列表
         List<Memory> memories = new ArrayList<>();
@@ -42,7 +42,7 @@ public class MemoryLibrary
     public List<Memory> searchByCategory(String category)
     {
         // 调用 MemoryDAO 的 search_by_category 方法
-        List<Object[]> results = memoryDAO.searchByCategory(category);
+        List<String[]> results = memoryDAO.searchByCategory(category);
 
         // 将结果转换为 Memory 对象列表
         List<Memory> memories = new ArrayList<>();
@@ -61,14 +61,14 @@ public class MemoryLibrary
         return memories;
     }
 
-    public boolean updateMemory(Long memoryId, String memory, String definition, String context, String source,
+    public boolean updateMemory(int memoryId, String memory, String definition, String context, String source,
             String category)
     {
         // 调用 MemoryDAO 的 update_memory 方法
         return memoryDAO.updateMemory(memoryId, memory, definition, context, source, category);
     }
 
-    public boolean deleteMemory(Long memoryId)
+    public boolean deleteMemory(int memoryId)
     {
         // 调用 MemoryDAO 的 delete_memory 方法
         return memoryDAO.deleteMemory(memoryId);
@@ -80,17 +80,17 @@ public class MemoryLibrary
         return memoryDAO.exportBackupMemory(backupFile);
     }
 
-    public Long getIdByMemory(String memory)
+    public int getIdByMemory(String memory)
     {
         // 调用 MemoryDAO 的 get_id_by_memory 方法
         Object result = memoryDAO.getIdByMemory(memory);
         if (result != null)
         {
-            return (Long) result;
+            return (int) result;
         }
         else
         {
-            return null;
+            return -1;
         }
     }
 }
