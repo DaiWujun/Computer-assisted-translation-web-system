@@ -1,0 +1,172 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #f1f1f1;
+    height: 100vh;
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    height: 126px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+.header h1 {    
+    font-size: 66px;
+    margin: 0;   
+}
+
+.header img {
+        width: 72px;
+        height: 72px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-left: auto;
+    }
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  height: 81px;
+  width: 100%;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.nav button {
+  width: 200px;
+  height: 81px;
+  margin: 0 10px;
+  border-radius: 50px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav button:first-child {
+  background-color: #ffffff;
+}
+
+.nav button:nth-child(2) {
+  background-color: #c7c7c7;
+}
+
+.nav button:last-child {
+  background-color: #ffffff;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(100% - 207px);
+  margin-top: 20px;
+}
+
+.source {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  width: 45%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.source button {
+  width: 100px;
+  height: 40px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #c7c7c7;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+
+.source select {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+  outline: none;
+}
+
+.target {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  width: 45%;
+  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.target button {
+  width: 100px;
+  height: 40px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #c7c7c7;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+
+.target select {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+  outline: none;
+}
+
+.target button:last-child {
+  margin-top: auto;
+}
