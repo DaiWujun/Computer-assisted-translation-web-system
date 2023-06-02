@@ -1,6 +1,6 @@
 """base translator class"""
 
-__copyright__ = "Copyright (C) 2020 Nidhal Baccouri"
+__copyright__ = "Copyright (C) 2023 Wzp"
 
 from abc import ABC, abstractmethod
 from pathlib import Path
