@@ -37,6 +37,7 @@ except connector.Error as err:
 # 获取游标
 cursor = cnx.cursor()
 
+
 class TermDAO:
     # 增加一条术语
     def add_term(term, definition='', context='', source='', category=''):

@@ -1,3 +1,6 @@
+from TermLibrary import TermDAO
+
+
 class TerminologyController:
     @staticmethod
     def add_term(term, definition='', context='', source='', category=''):
