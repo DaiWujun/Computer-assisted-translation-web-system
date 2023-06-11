@@ -4,14 +4,10 @@ import mysql.connector as connector
 from mysql.connector import errorcode
 
 #  CREATE TABLE memorys (
-#     id INT AUTO_INCREMENT PRIMARY KEY,                                            #   记忆的唯一标识符，自动递增；
-#     memory VARCHAR(255) NOT NULL,                                                 #   记忆本身，必填字段；
-#     definition TEXT,                                                              #   记忆的定义，可选字段；
-#     context TEXT,                                                                 #   记忆出现的上下文，可选字段；
-#     source VARCHAR(255),                                                          #   记忆来源，可选字段；
-#     category VARCHAR(255),                                                        #   记忆所属的分类，可选字段；
-#     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,                               #   记忆的创建时间，自动生成；
-#     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP    #   记忆的更新时间，自动更新。
+#     project_id INT AUTO_INCREMENT PRIMARY KEY,        # 项目ID
+#     project_name VARCHAR(255),                        # 项目名称
+#     project_content TEXT,                             # 项目内容
+#     saved_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP    # 保存时间
 # );
 
 # 数据库连接配置
@@ -37,6 +33,85 @@ except connector.Error as err:
 # 获取游标
 cursor = cnx.cursor()
 
+class MemoryLibraryDAO:
+    def __init__(self):
+        self.cnx = mysql.connector.connect(
+            host="localhost",
+            user="your_username",
+            password="your_password",
+            database="your_database"
+        )
+    
+    def __del__(self):
+        self.cnx.close()
+    
+    def get_all_projects(self):
+        cursor = self.cnx.cursor()
+        get_all_projects_query = "SELECT * FROM Projects"
+        cursor.execute(get_all_projects_query)
+        projects = []
+        for (project_id, project_name, project_content, saved_time) in cursor:
+            project = {
+                "project_id": project_id,
+                "project_name": project_name,
+                "project_content": project_content,
+                "saved_time": saved_time
+            }
+            projects.append(project)
+        cursor.close()
+        return projects
+    
+    def search_projects(self, search_term):
+        cursor = self.cnx.cursor()
+        search_projects_query = """
+        SELECT * FROM Projects
+        WHERE project_name LIKE %s OR project_content LIKE %s
+        """
+        search_data = ('%' + search_term + '%', '%' + search_term + '%')
+        cursor.execute(search_projects_query, search_data)
+        projects = []
+        for (project_id, project_name, project_content, saved_time) in cursor:
+            project = {
+                "project_id": project_id,
+                "project_name": project_name,
+                "project_content": project_content,
+                "saved_time": saved_time
+            }
+            projects.append(project)
+        cursor.close()
+        return projects
+    
+    def add_project(self, project_name, project_content):
+        cursor = self.cnx.cursor()
+        add_project_query = """
+        INSERT INTO Projects (project_name, project_content)
+        VALUES (%s, %s)
+        """
+        project_data = (project_name, project_content)
+        cursor.execute(add_project_query, project_data)
+        self.cnx.commit()
+        cursor.close()
+    
+    def delete_project(self, project_id):
+            cursor = self.cnx.cursor()
+            delete_project_query = "DELETE FROM Projects WHERE project_id = %s"
+            cursor.execute(delete_project_query, (project_id,))
+            self.cnx.commit()
+            cursor.close()
+        
+    def update_project(self, project_id, project_name, project_content):
+        cursor = self.cnx.cursor()
+        update_project_query = """
+        UPDATE Projects
+        SET project_name = %s, project_content = %s
+        WHERE project_id = %s
+        """
+        project_data = (project_name, project_content, project_id)
+        cursor.execute(update_project_query, project_data)
+        self.cnx.commit()
+        cursor.close()
+
+""" 
 class MemoryDAO:
 # 增加一条记忆
     def add_memory(memory, definition='', context='', source='', category=''):
@@ -114,3 +189,4 @@ class MemoryDAO:
             return result
         else:
             return None
+ """
