@@ -7,7 +7,9 @@ import requests
 
 from deep_translator.base import BaseTranslator
 from deep_translator.constants import (
+    
     BASE_URLS,
+
     DEEPL_ENV_VAR,
     DEEPL_LANGUAGE_TO_CODE,
 )
