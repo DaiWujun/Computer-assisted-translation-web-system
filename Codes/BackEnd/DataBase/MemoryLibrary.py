@@ -111,6 +111,68 @@ class MemoryLibraryDAO:
         self.cnx.commit()
         cursor.close()
 
+    def export_backup(self, folder_path):
+        cursor = self.cnx.cursor()
+        export_backup_query = "SELECT * FROM Projects"
+        cursor.execute(export_backup_query)
+        projects = []
+        for (project_id, project_name, project_content, saved_time) in cursor:
+            project = {
+                "project_id": project_id,
+                "project_name": project_name,
+                "project_content": project_content,
+                "saved_time": saved_time
+            }
+            projects.append(project)
+        cursor.close()
+
+        if not os.path.exists(folder_path):
+            os.makedirs(folder_path)
+
+        for project in projects:
+            project_id = project["project_id"]
+            project_name = project["project_name"]
+            project_content = project["project_content"]
+            saved_time = project["saved_time"]
+
+            backup_folder = os.path.join(folder_path, str(project_id))
+            os.makedirs(backup_folder)
+
+            backup_file = os.path.join(backup_folder, f"{project_id}_{project_name}.txt")
+            with open(backup_file, "w", encoding="utf-8") as f:
+                f.write(f"Project Name: {project_name}\n")
+                f.write(f"Saved Time: {saved_time}\n")
+                f.write("\n")
+                f.write(project_content)
+
+        shutil.make_archive(folder_path, "zip", folder_path)
+
+    def import_backup(self, backup_file_path):
+        # 首先解压备份文件
+        import_folder = os.path.splitext(backup_file_path)[0]
+        shutil.unpack_archive(backup_file_path, import_folder)
+
+        cursor = self.cnx.cursor()
+        insert_project_query = """
+        INSERT INTO Projects (project_name, project_content)
+        VALUES (%s, %s)
+        """
+
+        # 遍历解压后的文件夹
+        for root, _, files in os.walk(import_folder):
+            for file in files:
+                project_file = os.path.join(root, file)
+                project_name = os.path.splitext(file)[0]
+
+                with open(project_file, "r", encoding="utf-8") as f:
+                    project_content = f.read()
+
+                project_data = (project_name, project_content)
+                cursor.execute(insert_project_query, project_data)
+
+        self.cnx.commit()
+        cursor.close()
+
 """ 
 class MemoryDAO:
 # 增加一条记忆
