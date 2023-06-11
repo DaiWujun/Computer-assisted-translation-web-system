@@ -1,10 +1,11 @@
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, request
 from TermLibrary import TermDAO
 
 app = Flask(__name__)
 
 
 @app.route('/terms', methods=['POST'])
+
 def add_term():
     data = request.get_json()
     term = data.get('term')
@@ -21,6 +22,7 @@ def add_term():
 
 
 @app.route('/terms', methods=['GET'])
+
 def search_terms():
     term = request.args.get('term')
     category = request.args.get('category')
@@ -36,6 +38,7 @@ def search_terms():
 
 
 @app.route('/terms/<term_id>', methods=['PUT'])
+
 def update_term(term_id):
     data = request.get_json()
     term = data.get('term')
@@ -52,6 +55,7 @@ def update_term(term_id):
 
 
 @app.route('/terms/<term_id>', methods=['DELETE'])
+
 def delete_term(term_id):
     try:
         TermDAO.delete_term(term_id)
@@ -61,6 +65,7 @@ def delete_term(term_id):
 
 
 @app.route('/terms/export', methods=['GET'])
+
 def export_backup():
     backup_file = request.args.get('backup_file')
 
@@ -75,6 +80,7 @@ def export_backup():
 
 
 @app.route('/terms/<term>', methods=['GET'])
+
 def get_term_id(term):
     try:
         term_id = TermDAO.get_id_by_term(term)
