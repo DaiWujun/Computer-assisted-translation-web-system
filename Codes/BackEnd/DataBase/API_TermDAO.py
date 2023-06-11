@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from TermLibrary import TermDAO
+from TermLibraryDAO import TermLibraryDAO
 
 app = Flask(__name__)
 
@@ -15,7 +15,7 @@ def add_term():
     category = data.get('category', '')
 
     try:
-        TermDAO.add_term(term, definition, context, source, category)
+        TermLibraryDAO.add_term(term, definition, context, source, category)
         return jsonify({'message': 'Term added successfully.'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -28,9 +28,9 @@ def search_terms():
     category = request.args.get('category')
 
     if term:
-        results = TermDAO.search_by_term(term)
+        results = TermLibraryDAO.search_by_term(term)
     elif category:
-        results = TermDAO.search_by_category(category)
+        results = TermLibraryDAO.search_by_category(category)
     else:
         return jsonify({'message': 'Missing search term or category.'}), 400
 
@@ -48,7 +48,7 @@ def update_term(term_id):
     category = data.get('category', '')
 
     try:
-        TermDAO.update_term(term_id, term, definition, context, source, category)
+        TermLibraryDAO.update_term(term_id, term, definition, context, source, category)
         return jsonify({'message': 'Term updated successfully.'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -58,7 +58,7 @@ def update_term(term_id):
 
 def delete_term(term_id):
     try:
-        TermDAO.delete_term(term_id)
+        TermLibraryDAO.delete_term(term_id)
         return jsonify({'message': 'Term deleted successfully.'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -73,7 +73,7 @@ def export_backup():
         return jsonify({'message': 'Missing backup file path.'}), 400
 
     try:
-        TermDAO.export_backup_term(backup_file)
+        TermLibraryDAO.export_backup_term(backup_file)
         return jsonify({'message': 'Backup exported successfully.'}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -83,7 +83,7 @@ def export_backup():
 
 def get_term_id(term):
     try:
-        term_id = TermDAO.get_id_by_term(term)
+        term_id = TermLibraryDAO.get_id_by_term(term)
         return jsonify({'term_id': term_id}), 200
     except Exception as e:
         return jsonify({'error': str(e)}), 500

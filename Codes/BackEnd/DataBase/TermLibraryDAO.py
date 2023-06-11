@@ -1,6 +1,6 @@
 
 
-class TermDAO:
+class TermLibraryDAO:
     # 增加一条术语
     def add_term(term, definition='', context='', source='', category=''):
         add_query = ("INSERT INTO terms "
